@@ -7,8 +7,6 @@
   overflow-wrap: break-word;
   word-break: break-word;
   table-layout:fixed;
-  min-height: 0;
-  min-width: 0;
 }
 
 * {
