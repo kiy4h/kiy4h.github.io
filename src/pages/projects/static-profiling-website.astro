@@ -1,0 +1,94 @@
+---
+// src/pages/projects/static-profiling-website.astro
+import { getCollection, getEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+// Get the specific project entry
+const project = await getEntry('projects', 'static-profiling-website');
+
+if (!project) {
+  throw new Error('Project not found');
+}
+
+const { Content } = await project.render(); // Render the Markdown content
+---
+
+<Layout title={project!.data.title} description={project!.data.description}>
+  <Header />
+
+  <article class="container mx-auto py-16 px-4 md:px-8 text-star-light">
+    <div class="max-w-4xl mx-auto bg-space-dark/50 border border-space-blue rounded-xl p-8 shadow-xl animate-fade-in-up">
+      <a href="/" class="inline-flex items-center text-accent-blue hover:text-accent-purple mb-8 transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        Back to Projects
+      </a>
+
+      <h1 class="text-4xl md:text-5xl font-extrabold text-accent-blue mb-6">
+        {project!.data.title}
+      </h1>
+
+      <p class="text-lg opacity-90 mb-8">
+        {project!.data.description}
+      </p>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-accent-purple mb-3">Technologies Used</h2>
+        <div class="flex flex-wrap gap-2 text-sm">
+          {project!.data.technologies.map(tech => (
+            <span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="prose prose-invert max-w-none text-star-light mb-8">
+        <!-- The main Markdown content will be rendered here -->
+        <Content />
+      </div>
+
+      {project!.data.liveDemo && (
+        <a
+          href={project!.data.liveDemo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-accent-blue hover:bg-accent-purple text-space-dark font-bold py-3 px-6 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 mr-4 mb-4"
+        >
+          Live Demo
+        </a>
+      )}
+      {project!.data.githubRepo && (
+        <a
+          href={project!.data.githubRepo}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-space-blue hover:bg-space-purple text-star-light font-bold py-3 px-6 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 mb-4"
+        >
+          GitHub Repository
+        </a>
+      )}
+
+      <!-- Placeholder for attachments (GIFs, PNGs, Videos) -->
+      <!-- You would typically embed these directly within your Markdown content,
+           or create specific Astro components if you need more complex layouts for them. -->
+      <div class="mt-12 border-t border-space-blue pt-8">
+        <h2 class="text-2xl font-semibold text-accent-purple mb-4">Attachments</h2>
+        <p class="text-star-light opacity-80">
+          This section is where you can embed GIFs, images, and videos related to your project.
+          Add them directly in your project's Markdown file (e.g., `src/content/projects/your-project.md`)
+          using standard Markdown image/video syntax, or by importing Astro components.
+        </p>
+        <!-- Example:
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <img src="/images/project-screenshot-1.png" alt="Project Screenshot 1" class="rounded-lg shadow-md w-full h-auto" />
+          <video controls src="/videos/project-demo.mp4" class="rounded-lg shadow-md w-full h-auto"></video>
+        </div>
+        -->
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

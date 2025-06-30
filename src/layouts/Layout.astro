@@ -1,0 +1,144 @@
+---
+// src/layouts/Layout.astro
+import { ViewTransitions } from 'astro:transitions';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <ViewTransitions />
+  </head>
+  <body class="bg-space-dark text-star-light font-sans antialiased">
+    <main class="relative z-10 min-h-screen flex flex-col">
+      <slot />
+    </main>
+    <style is:global>
+      /* Basic global styles, including the star field animation */
+      html.dark {
+        color-scheme: dark;
+      }
+
+      @keyframes fade-in-up {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .animate-fade-in-up {
+        animation: fade-in-up 1s ease-out;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Scroll animation classes for elements */
+      .animate-on-scroll {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+      .animate-on-scroll.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Scroll offset for sections to account for sticky header */
+      section[id] {
+        scroll-margin-top: 80px;
+      }
+      
+      /* Smaller offset for the about section to reduce gap */
+      section#about {
+        scroll-margin-top: 60px;
+      }
+    </style>
+    <script is:inline>
+      // Intersection Observer for scroll-based animations
+      function initializeScrollAnimations() {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              // Optionally, unobserve after animation
+              // observer.unobserve(entry.target);
+            } else {
+              // Optionally, remove 'in-view' if element scrolls out
+              // entry.target.classList.remove('in-view');
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+          observer.observe(element);
+        });
+      }
+
+      // Handle smooth scrolling with offset for hash links
+      function handleHashNavigation() {
+        // Check if there's a hash in the URL and scroll to it with offset
+        if (window.location.hash) {
+          setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              // Use different offsets for different sections
+              let headerHeight = 80; // Default offset
+              if (window.location.hash === '#about') {
+                headerHeight = 60; // Smaller offset for about section
+              }
+              
+              const targetPosition = target.offsetTop - headerHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }, 100); // Small delay to ensure page is ready
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeScrollAnimations();
+        handleHashNavigation();
+      });
+
+      // Re-initialize on Astro page transitions
+      document.addEventListener('astro:page-load', () => {
+        initializeScrollAnimations();
+        handleHashNavigation();
+      });
+    </script>
+  </body>
+</html>
