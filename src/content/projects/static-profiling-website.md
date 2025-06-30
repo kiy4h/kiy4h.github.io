@@ -1,8 +1,9 @@
 ---
-title: "AI Chatbot & Static Profiling Website"
+title: "Static Profiling Website with AI Chatbot"
 description: "A static profiling website hosted on Netlify with an AI chatbot feature powered by Gemini API via Cloudflare Worker."
 technologies: ["HTML", "CSS", "JavaScript", "Cloudflare Workers", "Gemini API", "Netlify"]
-thumbnail: "https://www.google.com/search?q=https://placehold.co/600x400/4A4A8A/E0E0F0%3Ftext%3DAI%2BChatbot" # Replace with your actual project thumbnail
+thumbnail: "/static-profiling-website.png" 
+liveDemo: https://mekarsarijember.netlify.app/
 order: 1
 ---
 
@@ -27,8 +28,10 @@ This project significantly enhanced my understanding of:
 
 ## Visual Showcase
 <!-- You can embed images and GIFs directly here using standard Markdown syntax -->
-A preview of the chatbot interface on the profiling website.
-The clean and minimal design of the main profiling page.
+![Mekarsari Website Preview](/static-profiling-website.png)
+*A preview of the chatbot interface on the profiling website.*
+
+
 <!-- If you have a video, embed it like this (ensure the video file is in your public folder) -->
 <!-- <video controls src="/videos/ai-chatbot-demo.mp4" class="w-full rounded-lg shadow-md my-6"></video> -->
 <!-- Video demonstration of the AI chatbot in action. -->

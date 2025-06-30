@@ -14,10 +14,10 @@ const projects = await getCollection('projects');
 // For now, let's assume a manual sort based on the provided list order
 const sortedProjects = [
   projects.find(p => p.slug === 'static-profiling-website'),
-  // projects.find(p => p.slug === 'camping-rental-website'),
-  // projects.find(p => p.slug === 'camping-rental-mobile-app'),
-  // projects.find(p => p.slug === 'plate-collecting-goose-game'),
-  // projects.find(p => p.slug === 'star-collecting-3d-game'),
+  projects.find(p => p.slug === 'camping-rental-website'),
+  projects.find(p => p.slug === 'camping-rental-mobile-app'),
+  projects.find(p => p.slug === 'goose-attack-on-restaurant'),
+  projects.find(p => p.slug === 'star-collecting-3d-game'),
 ].filter(Boolean); // Filter out any undefined if slug doesn't match
 ---
 
@@ -29,10 +29,11 @@ const sortedProjects = [
     <!-- Star field is in Layout.astro for persistent background -->
     <div class="animate-fade-in-up">
       <h1 class="text-5xl md:text-7xl font-extrabold text-star-light mb-4 leading-tight">
-        Crafting Robust Solutions,<br class="hidden md:block" /> From Backend to Full-Stack.
+        Hi! I'm 
+        <span class="text-accent-blue">Zakiyah</span>,
       </h1>
       <p class="text-lg md:text-xl text-star-light opacity-80 max-w-2xl mx-auto mb-8">
-        A backend-first developer passionate about elegant, efficient solutions and continuous learning in software development, AI, and ML.
+        A backend developer crafting elegant systems. Writing code with clarity, curiosity, and care.
       </p>
       <a href="#projects" class="inline-block bg-accent-blue hover:bg-accent-purple text-space-dark font-bold py-3 px-8 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300">
         Explore My Projects
@@ -49,10 +50,11 @@ const sortedProjects = [
     <h2 class="text-4xl font-bold text-accent-blue mb-8">About Me</h2>
     <div class="max-w-3xl mx-auto text-lg leading-relaxed">
       <p class="mb-4">
-        I believe in the art of clean code and the power of thoughtful design. As a versatile backend and full-stack developer, I transform complex challenges into intuitive, high-performance applications. My craft is defined by an affinity for minimal, flexible, and portable code, solving problems with elegant efficiency.
-      </p>
-      <p class="mb-4">
-        Forever a learner, I am captivated by the future of AI and machine learning, constantly deepening my expertise in software development best practices. I find my rhythm and accelerate my growth when collaborating with equally enthusiastic minds, believing the best solutions emerge from passionate teamwork.
+        I'm a college student currently in my 4th semester, majoring in software development.
+<br>
+I specialize in backend development but have also worked on mobile apps, frontend interfaces, and simple game projects. I enjoy writing code that is clean, minimal, and efficient — code that's easy to maintain and flexible enough to adapt.
+<br>
+I'm always looking for ways to grow, especially in areas like software architecture, AI, and machine learning. I enjoy working with teams that are driven and collaborative, where everyone is committed to building something meaningful together.
       </p>
       <h3 class="text-2xl font-semibold text-accent-purple mt-10 mb-4">Skills I'm Confident In</h3>
       <div class="flex flex-wrap justify-center gap-4 text-sm md:text-base">
@@ -126,16 +128,16 @@ const sortedProjects = [
       Eager to collaborate on challenging projects and explore new technologies. Feel free to reach out or connect with me on these platforms.
     </p>
     <div class="flex justify-center space-x-6">
-      <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      <a href="https://www.linkedin.com/in/zakiyah-h/" target="_blank" rel="noopener noreferrer" class="social-button">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="20" height="20" class="icon-filter"> 
         LinkedIn
       </a>
-      <a href="https://github.com/your-github-profile" target="_blank" rel="noopener noreferrer" class="social-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 3S18.73.65 16 2.5a6.01 6.01 0 0 0-12 0c-2.73-1.85-3.91-1.2-3.91-1.2A5.07 5.07 0 0 0 2 4.77a5.44 5.44 0 0 0 0 5.09c0 5.49 3.3 6.69 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+      <a href="https://github.com/kiy4h" target="_blank" rel="noopener noreferrer" class="social-button">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" width="20" height="20" class="icon-filter"> 
         GitHub
       </a>
-      <a href="mailto:your-email@example.com" class="social-icon">
-        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      <a href="mailto:z4kiy4h.h@gmail.com" class="social-button">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" width="20" height="20" class="icon-filter"> 
         Email
       </a>
     </div>
@@ -154,8 +156,26 @@ const sortedProjects = [
     .social-icon {
       @apply flex items-center space-x-2 text-star-light hover:text-accent-blue transition-colors duration-300;
     }
-    .social-icon svg {
-      @apply w-6 h-6;
+    .social-button {
+      @apply flex items-center text-star-light hover:text-accent-blue transition-all duration-300;
+      @apply bg-space-blue/30 hover:bg-accent-blue/20 backdrop-blur-sm;
+      @apply px-6 py-3 rounded-lg border border-space-blue/50 hover:border-accent-blue/50;
+      @apply shadow-lg hover:shadow-xl transform hover:-translate-y-1;
+      @apply font-medium text-sm;
+      gap: 0.75rem;
+    }
+    .social-button:active {
+      @apply transform translate-y-0 shadow-md;
+    }
+    .social-button img {
+      @apply w-5 h-5;
+    }
+    .icon-filter {
+      filter: brightness(0) saturate(100%) invert(85%) sepia(8%) saturate(1012%) hue-rotate(201deg) brightness(97%) contrast(90%);
+      transition: filter 0.3s ease;
+    }
+    .social-button:hover .icon-filter {
+      filter: brightness(0) saturate(100%) invert(67%) sepia(85%) saturate(4493%) hue-rotate(204deg) brightness(97%) contrast(94%);
     }
   </style>
 </Layout>

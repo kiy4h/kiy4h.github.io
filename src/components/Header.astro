@@ -8,10 +8,46 @@
       Zakiyah Hasanah
     </a>
     <div class="flex space-x-6">
-      <a href="/#projects" class="text-star-light hover:text-accent-blue transition-colors duration-300">Projects</a>
-      <a href="/#about" class="text-star-light hover:text-accent-blue transition-colors duration-300">About</a>
-      <a href="/#achievements" class="text-star-light hover:text-accent-blue transition-colors duration-300">Awards</a>
-      <a href="/#contact" class="text-star-light hover:text-accent-blue transition-colors duration-300">Contact</a>
+      <a id="nav-about" href="/#about" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">About</a>
+      <a id="nav-projects" href="/#projects" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Projects</a>
+      <a id="nav-achievements" href="/#achievements" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Awards</a>
+      <a id="nav-contact" href="/#contact" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Contact</a>
     </div>
   </nav>
 </header>
+
+<script>
+  // Simple navbar highlighting with Intersection Observer
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = ['about', 'projects', 'achievements', 'contact'];
+    
+    // Create observer to watch sections
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Remove active class from all links
+          navLinks.forEach(link => {
+            link.classList.remove('text-accent-blue', 'font-semibold');
+            link.classList.add('text-star-light');
+          });
+          
+          // Add active class to current section's link
+          const activeLink = document.querySelector(`a[href="/#${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.remove('text-star-light');
+            activeLink.classList.add('text-accent-blue', 'font-semibold');
+          }
+        }
+      });
+    }, {
+      rootMargin: '-100px 0px -50% 0px' // Account for header height
+    });
+    
+    // Observe all sections
+    sections.forEach(sectionId => {
+      const section = document.getElementById(sectionId);
+      if (section) observer.observe(section);
+    });
+  });
+</script>
