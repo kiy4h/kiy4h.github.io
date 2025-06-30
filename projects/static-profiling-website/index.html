@@ -1,0 +1,100 @@
+<!DOCTYPE html><html lang="en" class="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="description" content="A static profiling website hosted on Netlify with an AI chatbot feature powered by Gemini API via Cloudflare Worker."><link rel="icon" type="image/svg+xml" href="/favicon.svg"><title>AI Chatbot &amp; Static Profiling Website</title><!-- Google Fonts - Inter --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CtSceO8m.js"></script><link rel="stylesheet" href="/_astro/index.CId6J9aB.css"></head> <body class="bg-space-dark text-star-light font-sans antialiased"> <main class="relative z-10 min-h-screen flex flex-col">  <header class="w-full py-6 px-4 md:px-8 bg-space-dark sticky top-0 z-50 shadow-lg border-b border-space-blue"> <nav class="container mx-auto flex justify-between items-center"> <a href="/" class="text-2xl font-bold text-accent-blue hover:text-accent-purple transition-colors duration-300"> <!-- <span class="inline-block transform -rotate-6">✨</span>  -->
+Zakiyah Hasanah
+</a> <div class="flex space-x-6"> <a href="/#projects" class="text-star-light hover:text-accent-blue transition-colors duration-300">Projects</a> <a href="/#about" class="text-star-light hover:text-accent-blue transition-colors duration-300">About</a> <a href="/#achievements" class="text-star-light hover:text-accent-blue transition-colors duration-300">Awards</a> <a href="/#contact" class="text-star-light hover:text-accent-blue transition-colors duration-300">Contact</a> </div> </nav> </header> <article class="container mx-auto py-16 px-4 md:px-8 text-star-light"> <div class="max-w-4xl mx-auto bg-space-dark/50 border border-space-blue rounded-xl p-8 shadow-xl animate-fade-in-up"> <a href="/" class="inline-flex items-center text-accent-blue hover:text-accent-purple mb-8 transition-colors duration-300"> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+Back to Projects
+</a> <h1 class="text-4xl md:text-5xl font-extrabold text-accent-blue mb-6"> AI Chatbot &amp; Static Profiling Website </h1> <p class="text-lg opacity-90 mb-8"> A static profiling website hosted on Netlify with an AI chatbot feature powered by Gemini API via Cloudflare Worker. </p> <div class="mb-8"> <h2 class="text-2xl font-semibold text-accent-purple mb-3">Technologies Used</h2> <div class="flex flex-wrap gap-2 text-sm"> <span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> HTML </span><span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> CSS </span><span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> JavaScript </span><span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> Cloudflare Workers </span><span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> Gemini API </span><span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80"> Netlify </span> </div> </div> <div class="prose prose-invert max-w-none text-star-light mb-8"> <!-- The main Markdown content will be rendered here --> <h2 id="project-overview">Project Overview</h2>
+<p>This project was a personal initiative to create a modern, static profiling website that not only showcases my skills but also integrates cutting-edge AI capabilities. The core feature is an interactive chatbot, allowing visitors to ask questions about my profile, which are answered by the Google Gemini API.## My Role &#x26; Key ContributionsAs the sole developer, I was responsible for the entire stack:</p>
+<ul>
+<li><strong>Frontend Development:</strong> Designed and built a clean, responsive user interface using HTML, CSS (Tailwind CSS for utility-first styling), and vanilla JavaScript for interactive elements.</li>
+<li><strong>Backend Integration (Cloudflare Worker):</strong> Implemented a Cloudflare Worker as a secure and efficient intermediary between the static website and the Gemini API. This worker handled API key management and request routing, ensuring no sensitive information was exposed on the client-side.</li>
+<li><strong>AI Chatbot Logic:</strong> Developed the JavaScript logic for the chatbot, managing user input, API requests to the Cloudflare Worker, and displaying AI-generated responses in a conversational interface.</li>
+<li><strong>Deployment &#x26; Optimization:</strong> Successfully deployed the static site on Netlify and the Cloudflare Worker on Cloudflare’s edge network, ensuring fast global access and low latency for the chatbot.</li>
+</ul>
+<h2 id="technical-challenges--solutions">Technical Challenges &#x26; Solutions</h2>
+<p>One of the main challenges was securely integrating the Gemini API without exposing the API key client-side. This was elegantly solved by using a Cloudflare Worker as a proxy. The worker received the user’s query from the frontend, made a secure server-side request to the Gemini API, and returned the AI’s response to the client. This approach also allowed for potential rate limiting and additional security measures at the edge.Another area was optimizing the static site for performance, which was achieved through efficient asset loading and Netlify’s CDN. I also focused on creating a smooth, responsive design that adapted well to various screen sizes.</p>
+<h2 id="impact--learnings">Impact &#x26; Learnings</h2>
+<p>This project significantly enhanced my understanding of:</p>
+<ul>
+<li><strong>Serverless Functions:</strong> Practical application of Cloudflare Workers for backend logic at the edge.</li>
+<li><strong>API Integration:</strong> Secure and efficient consumption of external APIs (Google Gemini API).</li>
+<li><strong>Static Site Generation:</strong> Best practices for building and deploying high-performance static websites.</li>
+<li><strong>Rapid Prototyping:</strong> The ability to quickly integrate new technologies and deliver a functional, impressive feature ahead of schedule.</li>
+</ul>
+<h2 id="visual-showcase">Visual Showcase</h2>
+<!-- You can embed images and GIFs directly here using standard Markdown syntax -->
+<p>A preview of the chatbot interface on the profiling website.
+The clean and minimal design of the main profiling page.</p>
+<!-- If you have a video, embed it like this (ensure the video file is in your public folder) -->
+<!-- <video controls src="/videos/ai-chatbot-demo.mp4" class="w-full rounded-lg shadow-md my-6"></video> -->
+<!-- Video demonstration of the AI chatbot in action. --> </div>   <!-- Placeholder for attachments (GIFs, PNGs, Videos) --> <!-- You would typically embed these directly within your Markdown content,
+           or create specific Astro components if you need more complex layouts for them. --> <div class="mt-12 border-t border-space-blue pt-8"> <h2 class="text-2xl font-semibold text-accent-purple mb-4">Attachments</h2> <p class="text-star-light opacity-80">
+This section is where you can embed GIFs, images, and videos related to your project.
+          Add them directly in your project's Markdown file (e.g., `src/content/projects/your-project.md`)
+          using standard Markdown image/video syntax, or by importing Astro components.
+</p> <!-- Example:
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <img src="/images/project-screenshot-1.png" alt="Project Screenshot 1" class="rounded-lg shadow-md w-full h-auto" />
+          <video controls src="/videos/project-demo.mp4" class="rounded-lg shadow-md w-full h-auto"></video>
+        </div>
+        --> </div> </div> </article> <footer class="w-full py-8 px-4 md:px-8 bg-space-dark border-t border-space-blue mt-12"> <div class="container mx-auto text-center text-star-light text-sm"> <p>&copy; 2025 Zakiyah Hasanah. All rights reserved.</p> <p class="mt-2">Built with <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="text-accent-blue hover:underline">Astro</a> and <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="text-accent-blue hover:underline">Tailwind CSS</a>.</p> </div> </footer>  </main>  <script>
+      // Intersection Observer for scroll-based animations
+      function initializeScrollAnimations() {
+        const observerOptions = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('in-view');
+              // Optionally, unobserve after animation
+              // observer.unobserve(entry.target);
+            } else {
+              // Optionally, remove 'in-view' if element scrolls out
+              // entry.target.classList.remove('in-view');
+            }
+          });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(element => {
+          observer.observe(element);
+        });
+      }
+
+      // Handle smooth scrolling with offset for hash links
+      function handleHashNavigation() {
+        // Check if there's a hash in the URL and scroll to it with offset
+        if (window.location.hash) {
+          setTimeout(() => {
+            const target = document.querySelector(window.location.hash);
+            if (target) {
+              // Use different offsets for different sections
+              let headerHeight = 80; // Default offset
+              if (window.location.hash === '#about') {
+                headerHeight = 60; // Smaller offset for about section
+              }
+              
+              const targetPosition = target.offsetTop - headerHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+              });
+            }
+          }, 100); // Small delay to ensure page is ready
+        }
+      }
+
+      // Initialize on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        initializeScrollAnimations();
+        handleHashNavigation();
+      });
+
+      // Re-initialize on Astro page transitions
+      document.addEventListener('astro:page-load', () => {
+        initializeScrollAnimations();
+        handleHashNavigation();
+      });
+    </script> </body> </html>
