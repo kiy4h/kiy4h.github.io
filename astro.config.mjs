@@ -11,4 +11,5 @@ export default defineConfig({
             theme: 'dracula', // Or any dark theme for code blocks
         },
     },
+    base: '/',
 });
