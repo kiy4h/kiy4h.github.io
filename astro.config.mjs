@@ -12,4 +12,5 @@ export default defineConfig({
         },
     },
     base: '/',
+    site: 'https://kiy4h.github.io',
 });
