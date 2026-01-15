@@ -8,6 +8,10 @@ order: 4
 
 ## Project Overview
 
+<div class="aspect-video">
+  <iframe class="w-full h-full" src="https://www.youtube.com/embed/RzzjXkOlHsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
 This project involved the development of a 2D "plate-collecting goose" game using **Java**. Beyond the gameplay mechanics, a core objective was to implement the **Model-View-Presenter (MVP) architectural pattern**, demonstrating a strong understanding of software design principles and clean code practices.
 
 ### My Role & Key Contributions
@@ -34,8 +38,3 @@ This project was instrumental in deepening my understanding of:
 * **Java Game Development:** Hands-on experience with fundamental 2D game development concepts in Java.
 * **Object-Oriented Programming (OOP):** Reinforcement of advanced OOP principles like encapsulation, inheritance, and polymorphism in a complex system.
 * **Clean Architecture:** The importance of structuring code for clarity and future scalability, even in smaller projects.
-
-### Visual Showcase
-<div class="aspect-video">
-  <iframe class="w-full h-full" src="https://www.youtube.com/embed/RzzjXkOlHsI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>

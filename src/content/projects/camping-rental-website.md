@@ -10,6 +10,8 @@ order: 2
 
 ## Project Overview
 
+![Website Homepage Screenshot](/camping-rental-website.png)
+
 Developed as part of a college course on Design and Web Programming, this project is a comprehensive web application designed for renting camping equipment. It features a robust backend for managing inventory, users, and rentals, coupled with a user-friendly frontend. The primary goal was to build a production-ready application and gain hands-on experience with deployment.
 
 ### My Role & Key Contributions
@@ -35,7 +37,3 @@ This project was pivotal in solidifying my understanding of:
 * **Web Application Architecture:** A comprehensive understanding of building scalable and maintainable web applications from the ground up.
 * **Database Management:** Practical experience with MySQL database design, normalization, and interaction within a web context.
 * **Deployment Pipelines:** First-hand experience with deploying a full-stack application to a cloud hosting provider, understanding the steps involved in moving from development to production.
-
-### Visual Showcase
-
-![Website Homepage Screenshot](/camping-rental-website.png)

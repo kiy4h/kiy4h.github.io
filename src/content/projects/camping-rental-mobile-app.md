@@ -8,6 +8,13 @@ order: 3
 
 ## Project Overview
 
+
+![Mobile App Login Screen](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Login)
+*The login screen of the mobile rental application.*
+
+![Mobile App Equipment List](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Equipment)
+*Browse available camping equipment within the app.*
+
 This mobile application was developed for a college course on Visual Mobile App Programming. It serves as a companion to the web-based rental system, allowing users to browse, select, and rent camping equipment directly from their smartphones. A key aspect of this project was establishing robust communication between the mobile frontend and a custom web service backend.
 
 ### My Role & Key Contributions
@@ -33,11 +40,3 @@ This project provided invaluable experience in:
 * **API Consumption:** Mastered the process of connecting mobile applications to web services, understanding HTTP requests, JSON parsing, and data synchronization.
 * **FastAPI Backend Development:** Gained practical experience in building lightweight and high-performance RESTful APIs using FastAPI.
 * **Frontend-Backend Synergy:** A holistic understanding of how mobile frontends and web service backends interact to deliver a complete application experience.
-
-### Visual Showcase
-
-![Mobile App Login Screen](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Login)
-*The login screen of the mobile rental application.*
-
-![Mobile App Equipment List](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Equipment)
-*Browse available camping equipment within the app.*

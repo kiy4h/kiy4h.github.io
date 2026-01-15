@@ -8,6 +8,9 @@ order: 5
 
 ## Project Overview
 
+![3D Game Gameplay Screenshot](/star-collecting-3d-game.png)
+*Screenshot showing the player character and collected stars.*
+
 This project was a deep dive into low-level 3D graphics programming, where I developed a star-collecting 3D game from scratch using **raw C++** and the **OpenGL** library. The game features a player character navigating a procedurally generated or heightmap-based terrain, collecting stars scattered across the landscape.
 
 ### My Role & Key Contributions
@@ -40,8 +43,3 @@ This project provided a profound understanding of:
 * **C++ for Performance:** Understanding how C++ can be used for performance-critical applications like game development.
 * **Mathematical Foundations of Graphics:** Applied linear algebra concepts directly to real-time rendering.
 * **Problem Solving:** Developed strong problem-solving skills in a complex, visually driven domain.
-
-### Visual Showcase
-
-![3D Game Gameplay Screenshot](/star-collecting-3d-game.png)
-*Screenshot showing the player character and collected stars.*

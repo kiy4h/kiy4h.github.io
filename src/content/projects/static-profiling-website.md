@@ -7,6 +7,10 @@ liveDemo: https://mekarsarijember.netlify.app/
 order: 1
 ---
 
+![Mekarsari Website Preview](/static-profiling-website.png)
+*A preview of the chatbot interface on the profiling website.*
+
+
 ## Project Overview
 This project was a personal initiative to create a modern, static profiling website that not only showcases my skills but also integrates cutting-edge AI capabilities. The core feature is an interactive chatbot, allowing visitors to ask questions about my profile, which are answered by the Google Gemini API.## My Role & Key ContributionsAs the sole developer, I was responsible for the entire stack:
 
@@ -25,13 +29,3 @@ This project significantly enhanced my understanding of:
 - **API Integration:** Secure and efficient consumption of external APIs (Google Gemini API).
 - **Static Site Generation:** Best practices for building and deploying high-performance static websites.
 - **Rapid Prototyping:** The ability to quickly integrate new technologies and deliver a functional, impressive feature ahead of schedule.
-
-## Visual Showcase
-<!-- You can embed images and GIFs directly here using standard Markdown syntax -->
-![Mekarsari Website Preview](/static-profiling-website.png)
-*A preview of the chatbot interface on the profiling website.*
-
-
-<!-- If you have a video, embed it like this (ensure the video file is in your public folder) -->
-<!-- <video controls src="/videos/ai-chatbot-demo.mp4" class="w-full rounded-lg shadow-md my-6"></video> -->
-<!-- Video demonstration of the AI chatbot in action. -->
