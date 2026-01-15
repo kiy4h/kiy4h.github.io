@@ -35,26 +35,7 @@ const { Content } = await project.render();
         {project.data.title}
       </h1>
 
-      <p class="text-lg opacity-90 mb-8">
-        {project.data.description}
-      </p>
-
-      <div class="mb-8">
-        <h2 class="text-2xl font-semibold text-accent-purple mb-3">Technologies Used</h2>
-        <div class="flex flex-wrap gap-2 text-sm">
-          {project.data.technologies.map((tech: string) => (
-            <span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80">
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      <div class="prose prose-invert max-w-none text-star-light mb-8">
-        <!-- The main Markdown content will be rendered here -->
-        <Content />
-      </div>
-
+      
       {project.data.liveDemo && (
         <a
           href={project.data.liveDemo}
@@ -75,6 +56,27 @@ const { Content } = await project.render();
           GitHub Repository
         </a>
       )}
+
+
+      <p class="text-lg opacity-90 mb-8">
+        {project.data.description}
+      </p>
+
+      <div class="mb-8">
+        <h2 class="text-2xl font-semibold text-accent-purple mb-3">Technologies Used</h2>
+        <div class="flex flex-wrap gap-2 text-sm">
+          {project.data.technologies.map((tech: string) => (
+            <span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80">
+              {tech}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="prose prose-invert max-w-none text-star-light mb-8">
+        <!-- The main Markdown content will be rendered here -->
+        <Content />
+      </div>
 
     </div>
   </article>
