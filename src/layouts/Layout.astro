@@ -73,8 +73,8 @@ const { title, description } = Astro.props;
         scroll-margin-top: 80px;
       }
       
-      /* Smaller offset for the about section to reduce gap */
-      section#about {
+      /* Smaller offset for the home section to reduce gap */
+      section#home {
         scroll-margin-top: 60px;
       }
     </style>
@@ -114,8 +114,8 @@ const { title, description } = Astro.props;
             if (target) {
               // Use different offsets for different sections
               let headerHeight = 80; // Default offset
-              if (window.location.hash === '#about') {
-                headerHeight = 60; // Smaller offset for about section
+              if (window.location.hash === '#home') {
+                headerHeight = 60; // Smaller offset for home section
               }
               
               const targetPosition = target.offsetTop - headerHeight;

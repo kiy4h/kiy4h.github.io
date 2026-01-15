@@ -1,14 +1,7 @@
----
-// src/components/Header.astro
----
-<header class="w-full py-6 px-4 md:px-8 bg-space-dark sticky top-0 z-50 shadow-lg border-b border-space-blue">
-  <nav class="container mx-auto flex justify-between items-center">
-    <a href="/" class="text-2xl font-bold text-accent-blue hover:text-accent-purple transition-colors duration-300">
-      <!-- <span class="inline-block transform -rotate-6">✨</span>  -->
-      Zakiyah Hasanah
-    </a>
+<header class="w-full py-6 px-4 md:px-8 bg-space-dark sticky top-0 z-50 shadow-lg">
+  <nav class="container mx-auto flex justify-center items-center">
     <div class="flex space-x-6">
-      <a id="nav-about" href="/#about" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">About</a>
+      <a id="nav-home" href="/#home" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Home</a>
       <a id="nav-projects" href="/#projects" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Projects</a>
       <a id="nav-achievements" href="/#achievements" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Awards</a>
       <a id="nav-contact" href="/#contact" class="nav-link text-star-light hover:text-accent-blue transition-colors duration-300">Contact</a>
@@ -20,7 +13,7 @@
   // Simple navbar highlighting with Intersection Observer
   document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = ['about', 'projects', 'achievements', 'contact'];
+    const sections = ['home', 'projects', 'achievements', 'contact'];
     
     // Create observer to watch sections
     const observer = new IntersectionObserver((entries) => {
