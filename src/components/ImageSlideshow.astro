@@ -1,0 +1,214 @@
+---
+interface Image {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface Props {
+  images: Image[];
+  height?: string;
+}
+
+const { images, height = "500px" } = Astro.props;
+const uniqueId = 'gallery-' + Math.random().toString(36).substr(2, 9);
+---
+
+<div id={uniqueId} class="flex flex-col lg:flex-row gap-6 my-8 not-prose bg-space-dark/30 p-4 rounded-xl border border-white/5 shadow-2xl h-[600px] lg:h-[500px]">
+    
+    <!-- Main Display Area -->
+    <div class="flex-1 relative rounded-lg overflow-hidden group h-[300px] lg:h-full">
+        {images.map((img, index) => (
+            <div 
+                class="main-image absolute inset-0 w-full h-full transition-all duration-500 ease-in-out"
+                data-index={index}
+                style={`opacity: ${index === 0 ? '1' : '0'}; z-index: ${index === 0 ? '10' : '0'}; transform: ${index === 0 ? 'scale(1)' : 'scale(1.05)'}; pointer-events: ${index === 0 ? 'auto' : 'none'};`}
+            >
+                <img 
+                    src={img.src} 
+                    alt={img.alt} 
+                    class="w-full h-full object-contain bg-black/50 backdrop-blur-sm"
+                    loading={index === 0 ? "eager" : "lazy"}
+                />
+            </div>
+        ))}
+
+        <!-- Navigation Arrows -->
+        <button class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 z-30 bg-black/40 hover:bg-accent-blue/90 text-white p-3 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110 focus:outline-none border border-white/10" aria-label="Previous image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        
+        <button class="next-btn absolute top-1/2 right-4 -translate-y-1/2 z-30 bg-black/40 hover:bg-accent-blue/90 text-white p-3 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 transform hover:scale-110 focus:outline-none border border-white/10" aria-label="Next image">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Sidebar: Description & Vertical Picker -->
+    <div class="lg:w-80 flex flex-col h-full gap-4 min-w-0">
+        
+        <!-- Description Panel (Fixed Height) -->
+        <div class="description-panel h-[120px] bg-space-light/5 rounded-lg p-4 border border-white/5 relative overflow-hidden flex items-center shrink-0">
+             {images.map((img, index) => (
+                <div 
+                    class="caption-content absolute inset-0 p-4 transition-all duration-500 ease-in-out flex flex-col justify-center"
+                    data-index={index}
+                    style={`opacity: ${index === 0 ? '1' : '0'}; transform: translateY(${index === 0 ? '0' : '10px'}); pointer-events: none;`}
+                >
+                    <h3 class="text-accent-blue font-bold text-base mb-1 truncate w-full">{img.alt}</h3>
+                    <p class="text-star-light/80 text-sm leading-snug line-clamp-3">
+                        {img.caption || img.alt}
+                    </p>
+                </div>
+            ))}
+        </div>
+
+        <!-- Vertical Picker List -->
+        <div class="thumbnails flex flex-col gap-2 overflow-y-auto pr-2 custom-scrollbar flex-1 min-h-0">
+            {images.map((img, index) => (
+                <button
+                    class={`thumbnail-btn flex items-center gap-3 p-2 rounded-lg transition-all duration-200 focus:outline-none group w-full text-left border hover:bg-white/5 shrink-0 ${index === 0 ? 'border-accent-blue/50 bg-white/5' : 'border-transparent'}`}
+                    data-index={index}
+                    aria-label={`View ${img.alt}`}
+                >
+                    <!-- Number Badge -->
+                    <span class={`number-badge flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full text-sm font-bold transition-colors ${index === 0 ? 'bg-accent-blue text-space-dark' : 'bg-white/10 text-star-light group-hover:bg-white/20'}`}>
+                        {index + 1}
+                    </span>
+
+                    <!-- Thumbnail -->
+                    <div class="w-12 h-12 flex-shrink-0 rounded-md overflow-hidden bg-space-dark">
+                        <img 
+                            src={img.src} 
+                            alt="" 
+                            class="w-full h-full object-cover transition-opacity duration-300" 
+                        />
+                    </div>
+                    
+                    <!-- Title -->
+                     <span class={`text-sm font-medium truncate flex-1 transition-colors ${index === 0 ? 'text-accent-blue' : 'text-star-light/70 group-hover:text-star-light'}`}>
+                        {img.alt}
+                     </span>
+                </button>
+            ))}
+        </div>
+    </div>
+
+</div>
+
+<style>
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+</style>
+
+<script define:vars={{ uniqueId }}>
+    const gallery = document.getElementById(uniqueId);
+    
+    if (gallery) {
+        const mainImages = gallery.querySelectorAll('.main-image');
+        const captions = gallery.querySelectorAll('.caption-content');
+        const thumbnails = gallery.querySelectorAll('.thumbnail-btn');
+        const prevBtn = gallery.querySelector('.prev-btn');
+        const nextBtn = gallery.querySelector('.next-btn');
+        
+        let currentIndex = 0;
+        const totalSlides = mainImages.length;
+        
+        const updateView = (index, shouldScroll = true) => {
+            // Normalize index
+            if (index >= totalSlides) index = 0;
+            if (index < 0) index = totalSlides - 1;
+            
+            currentIndex = index;
+
+            // Update Main Images
+            mainImages.forEach((slide, idx) => {
+                const el = slide;
+                if (idx === currentIndex) {
+                    el.style.opacity = '1';
+                    el.style.zIndex = '10';
+                    el.style.transform = 'scale(1)';
+                } else {
+                    el.style.opacity = '0';
+                    el.style.zIndex = '0';
+                    el.style.transform = 'scale(1.05)';
+                }
+            });
+
+            // Update Captions
+            captions.forEach((cap, idx) => {
+                const el = cap;
+                if (idx === currentIndex) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                } else {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(10px)';
+                }
+            });
+
+            // Update List Items (Vertical Picker)
+            thumbnails.forEach((btn, idx) => {
+                const badge = btn.querySelector('.number-badge');
+                const label = btn.querySelector('span:last-child'); // The title span
+
+                if (idx === currentIndex) {
+                    // Button Active State
+                    btn.classList.add('border-accent-blue/50', 'bg-white/5');
+                    btn.classList.remove('border-transparent');
+                    
+                    // Badge Active State
+                    badge.classList.remove('bg-white/10', 'text-star-light', 'group-hover:bg-white/20');
+                    badge.classList.add('bg-accent-blue', 'text-space-dark');
+
+                    // Label Active State
+                    label.classList.remove('text-star-light/70', 'group-hover:text-star-light');
+                    label.classList.add('text-accent-blue');
+                    
+                    // Scroll into view if needed
+                    if (shouldScroll) {
+                        btn.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                } else {
+                    // Button Inactive State
+                    btn.classList.remove('border-accent-blue/50', 'bg-white/5');
+                    btn.classList.add('border-transparent');
+                    
+                    // Badge Inactive State
+                    badge.classList.remove('bg-accent-blue', 'text-space-dark');
+                    badge.classList.add('bg-white/10', 'text-star-light'); // group-hover handled by css class in markup
+
+                    // Label Inactive State
+                    label.classList.remove('text-accent-blue');
+                    label.classList.add('text-star-light/70');
+                }
+            });
+        };
+
+        // Event Listeners
+        nextBtn?.addEventListener('click', () => updateView(currentIndex + 1));
+        prevBtn?.addEventListener('click', () => updateView(currentIndex - 1));
+
+        thumbnails.forEach((thumb, idx) => {
+            thumb.addEventListener('click', () => updateView(idx));
+        });
+
+        // Initialize first view without scrolling
+        updateView(0, false);
+    }
+</script>

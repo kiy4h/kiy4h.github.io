@@ -1,0 +1,74 @@
+---
+title: "CE-rent"
+description: "A full-stack camping equipment rental platform featuring secure payments and comprehensive dashboard management."
+technologies: ["Laravel", "Livewire", "Tailwind CSS", "Alpine.js", "MySQL", "Midtrans", "PHP"]
+thumbnail: "/projects/ce-rent/thumbnail.png"
+aesthetic: "/projects/ce-rent/thumbnail.jpg"
+liveDemo: null
+githubRepo: null
+order: 2
+---
+import ImageSlideshow from '../../components/ImageSlideshow.astro';
+import GalleryGrid from '../../components/GalleryGrid.astro';
+
+## Overview
+
+**CE-rent** is a full-stack web application designed for renting camping equipment. It provides a complete e-commerce experience including product browsing, cart management, and secure checkout, backed by a robust administrative dashboard.
+
+## Features
+
+- **Product Catalog** - Browse and search a wide variety of camping gear.
+- **Cart** - Easily manage items and quantities with dynamic updates.
+- **Secure Checkout** - Integrated **Midtrans** payment gateway for safe transactions.
+- **User Dashboard** - Track order history and manage profile settings.
+- **Admin Portal** - Comprehensive tools for managing inventory, orders, and transactions.
+- **Reviews** - User testimonial system.
+
+## Tech Stack
+
+- **Backend** - Laravel 11.x, PHP 8.2+
+- **Frontend** - Livewire 3.x, Tailwind CSS, Alpine.js
+- **Database** - MySQL
+- **Payment** - Midtrans Gateway
+
+## Gallery
+
+### Home & Shop
+
+<GalleryGrid
+  images={[
+    { src: "/projects/ce-rent/home%20view%201.png", alt: "Home View 1", caption: "Home View 1" },
+    { src: "/projects/ce-rent/home%20view%202.png", alt: "Home View 2", caption: "Home View 2" },
+    { src: "/projects/ce-rent/home%20view%203.png", alt: "Home View 3", caption: "Home View 3" },
+    { src: "/projects/ce-rent/home%20view%204.png", alt: "Home View 4", caption: "Home View 4" },
+    { src: "/projects/ce-rent/shop%20menu.png", alt: "Shop Menu", caption: "Shop Menu" }
+  ]}
+/>
+
+### Booking Process
+
+<ImageSlideshow
+  images={[
+    { src: "/projects/ce-rent/item detail, set start & end date.png", alt: "Item Detail", caption: "Product Details & Booking Date Selection" },
+    { src: "/projects/ce-rent/view cart items.png", alt: "View Cart Items", caption: "Shopping Cart" },
+    { src: "/projects/ce-rent/checkout - insert billing details.png", alt: "Checkout Billing", caption: "Checkout - Billing Details" }
+  ]}
+  height="500px"
+/>
+
+### Payment
+
+<ImageSlideshow
+  images={[
+    { src: "/projects/ce-rent/checkout - pick payment method via midtrans.png", alt: "Payment Method", caption: "Secure Payment Selection (Midtrans)" },
+    { src: "/projects/ce-rent/checkout - simulate payment with midtrans sandbox.png", alt: "Payment Simulation", caption: "Payment Processing Simulation" },
+    { src: "/projects/ce-rent/checkout - payment successful.png", alt: "Payment Successful", caption: "Order Confirmation" }
+  ]}
+  height="500px"
+/>
+
+### Dashboard
+<figure>
+    <img src="/projects/ce-rent/user%20dashboard%20view.png" alt="User Dashboard" />
+    <figcaption>User Dashboard</figcaption>
+</figure>

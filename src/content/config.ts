@@ -8,6 +8,7 @@ const projects = defineCollection({
         description: z.string(), // Short description for the homepage card
         technologies: z.array(z.string()),
         thumbnail: z.string().optional(), // URL or path to an image/gif for the homepage card
+        aesthetic: z.string().optional(), // URL or path to a more aesthetic image for the detail page header
         order: z.number().optional(), // For custom sorting on homepage
         // For the detail page:
         longDescription: z.string().optional(), // More detailed text
