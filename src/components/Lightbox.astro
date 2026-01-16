@@ -14,10 +14,10 @@
 </div>
 
 <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
-    const lightboxCaption = document.getElementById('lightbox-caption');
-    const closeBtn = document.getElementById('lightbox-close');
+    let lightbox: HTMLElement | null = null;
+    let lightboxImg: HTMLImageElement | null = null;
+    let lightboxCaption: HTMLElement | null = null;
+    let closeBtn: HTMLElement | null = null;
 
     // Function to open lightbox
     const openLightbox = (src: string, alt: string, caption: string) => {
@@ -52,32 +52,12 @@
         }, 300);
     };
 
-    // Event Listeners
-    closeBtn?.addEventListener('click', closeLightbox);
-    
-    lightbox?.addEventListener('click', (e) => {
-        if (e.target === lightbox || (e.target as HTMLElement).closest('.relative') === lightbox?.querySelector('.relative') && e.target !== lightboxImg) {
-             // allow clicking outside image to close
-        }
-    });
-    
-    // Close when clicking strictly outside the image
-    lightbox?.addEventListener('click', (e) => {
-        if (e.target === lightbox || e.target === lightbox?.querySelector('.relative')) {
-            closeLightbox();
-        }
-    });
-
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeLightbox();
-    });
-
     // Attach click events to all images in the prose content
-    // Using event delegation in case content renders dynamically or just simplicity
     const attachImageListeners = () => {
-        const contentImages = document.querySelectorAll('.prose img');
+        // Broaden selector to include images in gallery grids as well as prose
+        const contentImages = document.querySelectorAll('.prose img, .gallery-grid img');
+        
         contentImages.forEach(img => {
-            // Check if it's already attached to avoid duplicates if run multiple times
             if (img.hasAttribute('data-lightbox-initialized')) return;
             
             img.classList.add('cursor-zoom-in', 'transition-transform', 'duration-300', 'hover:scale-[1.02]');
@@ -92,9 +72,43 @@
         });
     };
 
-    // Initialize on load and on astro:page-load (if View Transitions are used)
-    document.addEventListener('DOMContentLoaded', attachImageListeners);
-    document.addEventListener('astro:page-load', attachImageListeners);
+    // Initialize elements and listeners - runs on every navigation
+    const initLightbox = () => {
+        lightbox = document.getElementById('lightbox');
+        lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        lightboxCaption = document.getElementById('lightbox-caption');
+        closeBtn = document.getElementById('lightbox-close');
+
+        // Re-attach internal lightbox listeners since elements are new
+        if (closeBtn) {
+            closeBtn.onclick = closeLightbox; // Use property to avoid accumulation
+        }
+        
+        if (lightbox) {
+            lightbox.onclick = (e) => {
+                if (e.target === lightbox || e.target === lightbox?.querySelector('.relative')) {
+                    closeLightbox();
+                }
+            };
+        }
+
+        attachImageListeners();
+    };
+
+    // Global Keydown (only need one, but ensure it uses current refs?)
+    // document events persist, but we only need to add once. 
+    // However, since we redeclare refs, the closure might be stale if we don't be careful.
+    // Actually, closures capture the variable reference (binding), not value. So updating `lightbox` variable works.
+    // We just need to make sure we don't add multiple keydown listeners.
+    
+    // Simplest way for keydown: Just add it once or check? 
+    // Since this script runs once, we can add it once.
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Run on every page load (initial + view transitions)
+    document.addEventListener('astro:page-load', initLightbox);
 </script>
 
 <style is:global>
