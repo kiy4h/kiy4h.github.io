@@ -58,6 +58,9 @@
         const contentImages = document.querySelectorAll('.prose img, .gallery-grid img');
         
         contentImages.forEach(img => {
+            // Skip images inside buttons (like slideshow thumbnails)
+            if (img.closest('button')) return;
+
             if (img.hasAttribute('data-lightbox-initialized')) return;
             
             img.classList.add('cursor-zoom-in', 'transition-transform', 'duration-300', 'hover:scale-[1.02]');
