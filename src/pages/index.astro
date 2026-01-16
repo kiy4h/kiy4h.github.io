@@ -10,17 +10,6 @@ import SplitText from '../components/SplitText.tsx';
 
 // Fetch all project entries from the 'projects' collection
 const projects = await getCollection('projects');
-
-// Sort projects based on your preferred order
-// (e.g., by a 'priority' frontmatter field in your markdown files, or simply manually)
-// For now, let's assume a manual sort based on the provided list order
-const sortedProjects = [
-  projects.find(p => p.slug === 'static-profiling-website'),
-  projects.find(p => p.slug === 'ce-rent'),
-  projects.find(p => p.slug === 'camping-rental-mobile-app'),
-  projects.find(p => p.slug === 'goose-attack-on-restaurant'),
-  projects.find(p => p.slug === 'star-collecting-3d-game'),
-].filter(Boolean); // Filter out any undefined if slug doesn't match
 ---
 
 <Layout title="Zakiyah Hasanah - Developer Portfolio" description="A full-stack developer portfolio showcasing projects, skills, and achievements.">
@@ -74,7 +63,7 @@ const sortedProjects = [
   <section id="projects" class="container mx-auto py-16 px-4 md:px-8 animate-on-scroll">
     <h2 class="text-4xl font-bold text-accent-blue text-center mb-12">My Projects</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {sortedProjects.map(project => 
+      {projects.map(project => 
         project && (
           <ProjectCard
             title={project.data.title}
