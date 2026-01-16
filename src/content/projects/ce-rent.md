@@ -8,11 +8,6 @@ githubRepo: null
 order: 2
 ---
 
-<figure>
-    <img src="/projects/ce-rent/thumbnail.png" alt="Website Homepage Screenshot" />
-    <figcaption>Website Homepage Screenshot</figcaption>
-</figure>
-
 ## Overview
 
 **CE-rent** is a full-stack web application designed for renting camping equipment. It provides a complete e-commerce experience including product browsing, cart management, and secure checkout, backed by a robust administrative dashboard.
@@ -37,6 +32,7 @@ order: 2
 
 ### Home & Shop
 
+<div class="gallery-grid">
 <figure>
     <img src="/projects/ce-rent/home%20view%201.png" alt="Home View 1" />
     <figcaption>Home View 1</figcaption>
@@ -56,16 +52,17 @@ order: 2
     <img src="/projects/ce-rent/home%20view%204.png" alt="Home View 4" />
     <figcaption>Home View 4</figcaption>
 </figure>
-
 <figure>
     <img src="/projects/ce-rent/shop%20menu.png" alt="Shop Menu" />
     <figcaption>Shop Menu</figcaption>
 </figure>
+</div>
 
 ### Booking Process
 
+<div class="gallery-grid">
 <figure>
-    <img src="/projects/ce-rent/item%20detail%2C%20set%20start%20%26%20end%20date.png" alt="Item Detail" />
+    <img src="/projects/ce-rent/item detail, set start & end date.png" alt="Item Detail" />
     <figcaption>Item Detail</figcaption>
 </figure>
 
@@ -78,9 +75,11 @@ order: 2
     <img src="/projects/ce-rent/checkout%20-%20insert%20billing%20details.png" alt="Checkout Billing" />
     <figcaption>Checkout Billing</figcaption>
 </figure>
+</div>
 
 ### Payment
 
+<div class="gallery-grid">
 <figure>
     <img src="/projects/ce-rent/checkout%20-%20pick%20payment%20method%20via%20midtrans.png" alt="Payment Method" />
     <figcaption>Payment Method</figcaption>
@@ -95,10 +94,14 @@ order: 2
     <img src="/projects/ce-rent/checkout%20-%20payment%20successful.png" alt="Payment Successful" />
     <figcaption>Payment Successful</figcaption>
 </figure>
+</div>
 
 ### Admin
 
+<div class="gallery-grid">
 <figure>
     <img src="/projects/ce-rent/admin%20dashboard%20view.png" alt="Admin Dashboard" />
     <figcaption>Admin Dashboard</figcaption>
 </figure>
+
+</div>

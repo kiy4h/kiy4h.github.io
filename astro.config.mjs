@@ -7,7 +7,6 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
     integrations: [tailwind(), react()],
-    // Add other configurations as needed, e.g., for Markdown
     markdown: {
         shikiConfig: {
             theme: 'dracula', // Or any dark theme for code blocks
