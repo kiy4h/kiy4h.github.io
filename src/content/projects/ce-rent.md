@@ -4,7 +4,7 @@ description: "A full-stack camping equipment rental platform featuring secure pa
 technologies: ["Laravel", "Livewire", "Tailwind CSS", "Alpine.js", "MySQL", "Midtrans", "PHP"]
 thumbnail: "/projects/ce-rent/thumbnail.png"
 liveDemo: null
-githubRepo: null
+githubRepo: https://github.com/kiy4h/camping
 order: 2
 ---
 
@@ -96,12 +96,12 @@ order: 2
 </figure>
 </div>
 
-### Admin
+### Dashboard
 
 <div class="gallery-grid">
 <figure>
-    <img src="/projects/ce-rent/admin%20dashboard%20view.png" alt="Admin Dashboard" />
-    <figcaption>Admin Dashboard</figcaption>
+    <img src="/projects/ce-rent/user%20dashboard%20view.png" alt="Admin Dashboard" />
+    <figcaption>User Dashboard</figcaption>
 </figure>
 
 </div>
