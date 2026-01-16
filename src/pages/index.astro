@@ -16,7 +16,7 @@ const projects = await getCollection('projects');
 // For now, let's assume a manual sort based on the provided list order
 const sortedProjects = [
   projects.find(p => p.slug === 'static-profiling-website'),
-  projects.find(p => p.slug === 'camping-rental-website'),
+  projects.find(p => p.slug === 'ce-rent'),
   projects.find(p => p.slug === 'camping-rental-mobile-app'),
   projects.find(p => p.slug === 'goose-attack-on-restaurant'),
   projects.find(p => p.slug === 'star-collecting-3d-game'),
@@ -94,17 +94,17 @@ const sortedProjects = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
       <div class="achievement-card">
         <div class="text-5xl mb-4">🏆</div>
-        <h3 class="text-2xl font-semibold text-accent-purple mb-2">Google Code-in Finalist</h3>
+        <h3 class="text-2xl font-semibold mb-2">Google Code-in Finalist</h3>
         <p class="text-star-light">Recognized for open-source contributions on an international stage for two consecutive years (2018, 2019).</p>
       </div>
       <div class="achievement-card">
         <div class="text-5xl mb-4">🥇</div>
-        <h3 class="text-2xl font-semibold text-accent-purple mb-2">1st Place - DINAMIK 18</h3>
+        <h3 class="text-2xl font-semibold mb-2">1st Place - DINAMIK 18</h3>
         <p class="text-star-light">Secured 1st Place in a competitive programming contest (Study Program Level, 2023).</p>
       </div>
       <div class="achievement-card">
         <div class="text-5xl mb-4">🥉</div>
-        <h3 class="text-2xl font-semibold text-accent-purple mb-2">3rd Place - National Mobile App Contest</h3>
+        <h3 class="text-2xl font-semibold mb-2">3rd Place - National Mobile App Contest</h3>
         <p class="text-star-light">Awarded 3rd Place in a national educational mobile app contest (2020, Team).</p>
       </div>
     </div>
