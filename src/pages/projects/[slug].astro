@@ -19,68 +19,116 @@ interface Props {
 }
 
 const { project } = Astro.props as Props;
-const { Content } = await project.render();
+const { Content, headings } = await project.render();
 ---
 
 <Layout title={project.data.title} description={project.data.description}>
   <Header />
 
-  <article class="container mx-auto py-16 px-4 md:px-8 text-star-light">
-    <div class="max-w-6xl mx-auto bg-space-dark/50 rounded-xl p-8 shadow-xl animate-fade-in-up">
-      <a href="/#projects" class="inline-flex items-center text-accent-blue hover:text-accent-purple mb-8 transition-colors duration-300">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-        Back to Projects
-      </a>
-
-      <h1 class="text-4xl md:text-5xl font-extrabold text-accent-blue mb-6">
-        {project.data.title}
-      </h1>
-
-      
-      {project.data.liveDemo && (
-        <a
-          href={project.data.liveDemo}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-accent-blue hover:bg-accent-purple text-space-dark font-bold py-3 px-6 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 mr-4 mb-4"
-        >
-          Live Demo
+  <!-- Hero Section -->
+  <div class="relative w-full h-[50vh] min-h-[400px]">
+    <div class="absolute inset-0">
+        <img 
+            src={project.data.thumbnail} 
+            alt={project.data.title} 
+            class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-space-dark via-space-dark/60 to-transparent"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 md:px-8 h-full flex flex-col justify-end pb-12 relative z-10">
+        <a href="/#projects" class="inline-flex items-center text-accent-blue hover:text-accent-purple mb-6 transition-colors duration-300 w-fit">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Back to Projects
         </a>
-      )}
-      {project.data.githubRepo && (
-        <a
-          href={project.data.githubRepo}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-block bg-space-blue hover:bg-space-purple text-star-light font-bold py-3 px-6 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300 mb-4"
-        >
-          GitHub Repository
-        </a>
-      )}
+        <h1 class="text-4xl md:text-6xl font-extrabold text-star-light mb-4 shadow-sm text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple">
+            {project.data.title}
+        </h1>
+        <p class="text-xl text-star-light/90 max-w-2xl font-light">
+            {project.data.description}
+        </p>
+    </div>
+  </div>
 
+  <div class="container mx-auto py-12 px-4 md:px-8 text-star-light">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Main Content -->
+        <main class="lg:col-span-8">
+            <div class="bg-space-dark/50 rounded-xl p-6 md:p-10 shadow-xl animate-fade-in-up prose prose-invert max-w-none prose-lg prose-headings:text-accent-purple prose-a:text-accent-blue prose-img:rounded-xl">
+                <Content />
+            </div>
+        </main>
 
-      <p class="text-lg opacity-90 mb-8">
-        {project.data.description}
-      </p>
+        <!-- Sidebar -->
+        <aside class="lg:col-span-4 space-y-8">
+            <div class="bg-space-dark/50 rounded-xl p-6 shadow-xl sticky top-24 border border-white/5">
+                
+                <!-- Actions -->
+                <div class="flex flex-col gap-4 mb-8">
+                    {project.data.liveDemo && (
+                        <a
+                        href={project.data.liveDemo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-accent-blue hover:bg-accent-purple text-space-dark font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300 group"
+                        >
+                        <span>Live Demo</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                        </a>
+                    )}
+                    {project.data.githubRepo && (
+                        <a
+                        href={project.data.githubRepo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="flex items-center justify-center gap-2 bg-space-blue hover:bg-space-purple text-star-light font-bold py-3 px-6 rounded-lg shadow-lg transform hover:-translate-y-1 transition-all duration-300 border border-white/10"
+                        >
+                        <span>GitHub Repository</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        </a>
+                    )}
+                </div>
 
-      <div class="mb-8">
-        <h2 class="text-2xl font-semibold text-accent-purple mb-3">Technologies Used</h2>
-        <div class="flex flex-wrap gap-2 text-sm">
-          {project.data.technologies.map((tech: string) => (
-            <span class="bg-space-blue text-star-light px-3 py-1 rounded-full opacity-80">
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
+                <!-- Technologies -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-star-light mb-4 flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                        Tech Stack
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        {project.data.technologies.map((tech: string) => (
+                            <span class="bg-space-blue/30 text-accent-blue text-sm px-3 py-1.5 rounded-md border border-accent-blue/20 hover:border-accent-blue/50 transition-colors cursor-default">
+                            {tech}
+                            </span>
+                        ))}
+                    </div>
+                </div>
 
-      <div class="prose prose-invert max-w-none text-star-light mb-8">
-        <!-- The main Markdown content will be rendered here -->
-        <Content />
-      </div>
+                <!-- Table of Contents -->
+                 {headings.length > 0 && (
+                    <div>
+                        <h3 class="text-lg font-semibold text-star-light mb-4 flex items-center gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-accent-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+                            On this page
+                        </h3>
+                        <nav class="flex flex-col border-l border-white/10 ml-1">
+                            {headings.map((heading) => (
+                                <a 
+                                    href={`#${heading.slug}`} 
+                                    class={`text-sm text-star-light/60 hover:text-accent-blue hover:border-l-2 hover:border-accent-blue -ml-px py-2 transition-all duration-200 block border-l-2 border-transparent ${heading.depth === 2 ? 'pl-4' : 'pl-8'}`}
+                                >
+                                    {heading.text}
+                                </a>
+                            ))}
+                        </nav>
+                    </div>
+                 )}
+            </div>
+        </aside>
 
     </div>
-  </article>
+  </div>
 
   <Footer />
   <Lightbox />
