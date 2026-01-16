@@ -1,8 +1,10 @@
 ---
 title: "Star-Collecting 3D Game"
 description: "A 3D game developed from scratch in raw C++ using OpenGL for graphics rendering, featuring a player navigating a terrain to collect stars."
+tags: ["Game"]
 technologies: ["C++", "OpenGL", "3D Graphics", "Game Development"]
 thumbnail: "/star-collecting-3d-game.png"
+githubRepo: "https://github.com/kiy4h/uiiaiuiiai-explorer"
 order: 5
 ---
 

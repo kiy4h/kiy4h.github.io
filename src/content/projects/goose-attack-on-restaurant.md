@@ -1,8 +1,9 @@
 ---
 title: "Goose Attack on Restaurant Game"
 description: "A 2D game developed in Java applying the Model-View-Presenter (MVP) architectural pattern for clear separation of concerns."
+tags: ["Game"]
 technologies: ["Java", "Object-Oriented Programming", "Game Development"]
-thumbnail: "https://placehold.co/600x400/7A4A8A/E0E0F0?text=Goose+Game"
+thumbnail: "/projects/goose-attack-on-restaurant/thumbnail.png"
 order: 4
 ---
 

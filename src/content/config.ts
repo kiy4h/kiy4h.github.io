@@ -6,6 +6,8 @@ const projects = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(), // Short description for the homepage card
+        // tags consist of: Website, Mobile App, Game, AI/ML. there can be multiple tags. First tag decides "other apps..." section on detail page
+        tags: z.array(z.string()).optional(),
         technologies: z.array(z.string()),
         thumbnail: z.string().optional(), // URL or path to an image/gif for the homepage card
         aesthetic: z.string().optional(), // URL or path to a more aesthetic image for the detail page header
