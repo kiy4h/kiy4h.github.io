@@ -2,6 +2,7 @@
 title: "Static Profiling Website"
 description: "A static profiling website hosted on Netlify with an AI chatbot feature powered by Gemini API via Cloudflare Worker."
 tags: ["Website"]
+myRole: ["Backend Developer", "AI Developer"]
 technologies: ["HTML", "CSS", "JavaScript", "Cloudflare Workers", "Gemini API", "Netlify"]
 thumbnail: "/static-profiling-website.png" 
 aesthetic: "https://mekarsarijember.netlify.app/assets/img/hero-handshake.jpeg" 

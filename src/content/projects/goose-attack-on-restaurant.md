@@ -2,6 +2,7 @@
 title: "Goose Attack on Restaurant Game"
 description: "A 2D game developed in Java applying the Model-View-Presenter (MVP) architectural pattern for clear separation of concerns."
 tags: ["Game"]
+myRole: ["Game Developer", "Game Designer"]
 technologies: ["Java", "Object-Oriented Programming", "Game Development"]
 thumbnail: "/projects/goose-attack-on-restaurant/thumbnail.png"
 order: 4

@@ -2,6 +2,7 @@
 title: "Campedia"
 description: "A mobile application for renting camping equipment, developed with Flutter, connecting to a FastAPI backend for data and image serving."
 tags: ["Mobile App"]
+myRole: ["Backend Developer", "Mobile Developer"]
 technologies: ["Flutter", "Dart", "FastAPI", "Python", "Local MySQL (for backend)", "RESTful APIs"]
 thumbnail: "/projects/campedia/thumbnail.jpg"
 githubRepo: "https://github.com/kiy4h/campedia"
