@@ -1,5 +1,5 @@
 ---
-title: "Star-Collecting 3D Game"
+title: "Uiiaiuiiiai Explorer"
 description: "A 3D game developed from scratch in raw C++ using OpenGL for graphics rendering, featuring a player navigating a terrain to collect stars."
 tags: ["Game"]
 myRole: ["Game Developer"]
@@ -11,7 +11,7 @@ order: 5
 
 ## Project Overview
 
-![3D Game Gameplay Screenshot](/star-collecting-3d-game.png)
+![3D Game Gameplay Screenshot](/uiiaiuiiai-explorer.png)
 *Screenshot showing the player character and collected stars.*
 
 This project was a deep dive into low-level 3D graphics programming, where I developed a star-collecting 3D game from scratch using **raw C++** and the **OpenGL** library. The game features a player character navigating a procedurally generated or heightmap-based terrain, collecting stars scattered across the landscape.
