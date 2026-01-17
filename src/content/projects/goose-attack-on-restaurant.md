@@ -1,5 +1,5 @@
 ---
-title: "Goose Attack on Restaurant Game"
+title: "Goose Attack on Restaurant"
 description: "A 2D game developed in Java applying the Model-View-Presenter (MVP) architectural pattern for clear separation of concerns."
 tags: ["Game"]
 myRole: ["Game Developer", "Game Designer"]

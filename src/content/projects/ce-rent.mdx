@@ -1,6 +1,6 @@
 ---
 title: "CE-rent"
-description: "A full-stack camping equipment rental platform featuring secure payments and comprehensive dashboard management."
+description: "A full-stack camping equipment rental platform featuring secure payments, session-based cart management, and comprehensive admin workflows."
 tags: ["Website"]
 myRole: ["Full-Stack Developer"]
 technologies: ["Laravel", "Livewire", "Tailwind CSS", "Alpine.js", "MySQL", "Midtrans", "PHP"]
@@ -13,25 +13,13 @@ order: 2
 import ImageSlideshow from '../../components/ImageSlideshow.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
 
-## Overview
+## Key Implementation Details
 
-**CE-rent** is a full-stack web application designed for renting camping equipment. It provides a complete e-commerce experience including product browsing, cart management, and secure checkout, backed by a robust administrative dashboard.
+The application prioritizes a frictionless user experience (UX) starting with a **guest cart system**. I engineered a mechanism that allows unregistered guests to add items to their cart freely using temporary session storage. Once the guest user registers, this data merges seamlessly with their persistent account.
 
-## Features
+On the backend, I implemented a robust **Role-Based Access Control (RBAC)** system. This distinguishes between standard customers and administrators, granting the latter specific privileges to manage inventory, verify equipment returns, and calculate potential fines for late items.
 
-- **Product Catalog** - Browse and search a wide variety of camping gear.
-- **Cart** - Easily manage items and quantities with dynamic updates.
-- **Secure Checkout** - Integrated **Midtrans** payment gateway for safe transactions.
-- **User Dashboard** - Track order history and manage profile settings.
-- **Admin Portal** - Comprehensive tools for managing inventory, orders, and transactions.
-- **Reviews** - User testimonial system.
-
-## Tech Stack
-
-- **Backend** - Laravel 11.x, PHP 8.2+
-- **Frontend** - Livewire 3.x, Tailwind CSS, Alpine.js
-- **Database** - MySQL
-- **Payment** - Midtrans Gateway
+For financial transactions, I integrated the **Midtrans Payment Gateway** directly via their API. Rather than using pre-built wrappers, I manually implemented the request-response cycle to handle secure payments, ensuring the system can properly simulate transactions within the sandbox environment.
 
 ## Gallery
 
@@ -52,18 +40,18 @@ import GalleryGrid from '../../components/GalleryGrid.astro';
 <ImageSlideshow
   images={[
     { src: "/projects/ce-rent/item detail, set start & end date.png", alt: "Item Detail", caption: "Product Details & Booking Date Selection" },
-    { src: "/projects/ce-rent/view cart items.png", alt: "View Cart Items", caption: "Shopping Cart" },
-    { src: "/projects/ce-rent/checkout - insert billing details.png", alt: "Checkout Billing", caption: "Checkout - Billing Details" }
+    { src: "/projects/ce-rent/view cart items.png", alt: "View Cart Items", caption: "Shopping Cart with Session Persistence" },
+    { src: "/projects/ce-rent/checkout - insert billing details.png", alt: "Checkout Billing", caption: "Checkout & Billing Details" }
   ]}
   height="500px"
 />
 
-### Payment
+### Payment Flow
 
 <ImageSlideshow
   images={[
     { src: "/projects/ce-rent/checkout - pick payment method via midtrans.png", alt: "Payment Method", caption: "Secure Payment Selection (Midtrans)" },
-    { src: "/projects/ce-rent/checkout - simulate payment with midtrans sandbox.png", alt: "Payment Simulation", caption: "Payment Processing Simulation" },
+    { src: "/projects/ce-rent/checkout - simulate payment with midtrans sandbox.png", alt: "Payment Simulation", caption: "Sandbox Payment Processing" },
     { src: "/projects/ce-rent/checkout - payment successful.png", alt: "Payment Successful", caption: "Order Confirmation" }
   ]}
   height="500px"
