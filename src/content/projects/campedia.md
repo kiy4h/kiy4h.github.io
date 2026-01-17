@@ -12,11 +12,10 @@ order: 3
 ## Project Overview
 
 
-![Mobile App Login Screen](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Login)
-*The login screen of the mobile rental application.*
-
-![Mobile App Equipment List](https://placehold.co/400x800/4A4A8A/E0E0F0?text=App+Equipment)
-*Browse available camping equipment within the app.*
+<figure>
+    <img src="/projects/campedia/thumbnail.jpg" alt="User Dashboard" />
+    <figcaption>The Campedia Mobile Application Interface.
+</figure>
 
 This mobile application was developed for a college course on Visual Mobile App Programming. It serves as a companion to the web-based rental system, allowing users to browse, select, and rent camping equipment directly from their smartphones. A key aspect of this project was establishing robust communication between the mobile frontend and a custom web service backend.
 

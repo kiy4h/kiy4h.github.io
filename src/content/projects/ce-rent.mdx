@@ -13,17 +13,8 @@ order: 2
 import ImageSlideshow from '../../components/ImageSlideshow.astro';
 import GalleryGrid from '../../components/GalleryGrid.astro';
 
-## Key Implementation Details
-
-The application prioritizes a frictionless user experience (UX) starting with a **guest cart system**. I engineered a mechanism that allows unregistered guests to add items to their cart freely using temporary session storage. Once the guest user registers, this data merges seamlessly with their persistent account.
-
-On the backend, I implemented a robust **Role-Based Access Control (RBAC)** system. This distinguishes between standard customers and administrators, granting the latter specific privileges to manage inventory, verify equipment returns, and calculate potential fines for late items.
-
-For financial transactions, I integrated the **Midtrans Payment Gateway** directly via their API. Rather than using pre-built wrappers, I manually implemented the request-response cycle to handle secure payments, ensuring the system can properly simulate transactions within the sandbox environment.
-
-## Gallery
-
-### Home & Shop
+## About this Project
+CE-rent was developed as a comprehensive final project for the Web Design & Programming course, but my primary goal went beyond simply meeting requirements. I deliberately chose to build the application manually **without reliance on AI code generation** to gain a granular understanding of the Laravel framework.
 
 <GalleryGrid
   images={[
@@ -35,7 +26,10 @@ For financial transactions, I integrated the **Midtrans Payment Gateway** direct
   ]}
 />
 
+
 ### Booking Process
+The application prioritizes a frictionless user experience (UX) starting with a **guest cart system**. I engineered a mechanism that allows unregistered guests to add items to their cart freely using temporary session storage. Once the guest user registers, this data merges seamlessly with their persistent account.
+
 
 <ImageSlideshow
   images={[
@@ -48,6 +42,9 @@ For financial transactions, I integrated the **Midtrans Payment Gateway** direct
 
 ### Payment Flow
 
+For financial transactions, I integrated the **Midtrans Payment Gateway** directly via their API. Rather than using pre-built wrappers, I manually implemented the request-response cycle to handle secure payments, ensuring the system can properly simulate transactions within the sandbox environment.
+
+
 <ImageSlideshow
   images={[
     { src: "/projects/ce-rent/checkout - pick payment method via midtrans.png", alt: "Payment Method", caption: "Secure Payment Selection (Midtrans)" },
@@ -58,7 +55,12 @@ For financial transactions, I integrated the **Midtrans Payment Gateway** direct
 />
 
 ### Dashboard
+
+On the backend, I implemented a robust **Role-Based Access Control (RBAC)** system. This distinguishes between standard customers and administrators, granting the latter specific privileges to manage inventory, verify equipment returns, and calculate potential fines for late items.
+
+
 <figure>
     <img src="/projects/ce-rent/user%20dashboard%20view.png" alt="User Dashboard" />
     <figcaption>User Dashboard</figcaption>
 </figure>
+
