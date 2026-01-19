@@ -78,23 +78,68 @@ const projects = await getCollection('projects');
   </section>
 
   <!-- Awards & Achievements Section -->
-  <section id="achievements" class="container mx-auto py-16 px-4 md:px-8 text-center animate-on-scroll">
-    <h2 class="text-4xl font-bold text-accent-blue mb-12">Awards & Achievements</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-      <div class="achievement-card">
-        <div class="text-5xl mb-4">🏆</div>
-        <h3 class="text-2xl font-semibold mb-2">Google Code-in Finalist</h3>
-        <p class="text-star-light">Recognized for open-source contributions on an international stage for two consecutive years (2018, 2019).</p>
-      </div>
-      <div class="achievement-card">
-        <div class="text-5xl mb-4">🥇</div>
-        <h3 class="text-2xl font-semibold mb-2">1st Place - DINAMIK 18</h3>
-        <p class="text-star-light">Secured 1st Place in a competitive programming contest (Study Program Level, 2023).</p>
-      </div>
-      <div class="achievement-card">
-        <div class="text-5xl mb-4">🥉</div>
-        <h3 class="text-2xl font-semibold mb-2">3rd Place - National Mobile App Contest</h3>
-        <p class="text-star-light">Awarded 3rd Place in a national educational mobile app contest (2020, Team).</p>
+  <section id="achievements" class="container mx-auto py-16 px-4 md:px-8 animate-on-scroll">
+    <h2 class="text-4xl font-bold text-accent-blue text-center mb-12">Awards & Achievements</h2>
+    <div class="max-w-3xl mx-auto">
+      <div class="relative border-l-2 border-gray-700 ml-3 md:ml-6 space-y-12 pb-4 text-left">
+        
+        <!-- 2025 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2025</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">Top 50 Finalist in BUDAYA GO! Competition</h3>
+          <p class="text-star-light">Achieved Top 50 National Finalist status in a competition organized by Kementerian Kebudayaan Republik Indonesia</p>
+          <a href="https://budayago.id/" class="inline-block bg-space-blue hover:bg-accent-blue text-white text-sm font-bold py-2 px-6 rounded-full transition-colors duration-300">
+            More About BUDAYA GO!
+          </a>
+        </div>
+        
+        <!-- 2023 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2023</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">1st Place in DINAMIK 18 Competitive Programming</h3>
+          <p class="text-star-light">Secured 1st Place in a competitive programming contest, study program level.</p>
+        </div>
+
+        <!-- 2021 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2021</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">Top 10 Finalist: Educational Mobile Application Competition</h3>
+          <p class="text-star-light">Recognized as a Top 10 Finalist in a team-based educational mobile application competition.</p>
+        </div>
+
+        <!-- 2020 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2020</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">3rd Place - National Mobile App Contest</h3>
+          <p class="text-star-light">Awarded 3rd Place in a team-based national educational mobile app contest.</p>
+        </div>
+
+        <!-- 2019 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2019</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">Google Code-in Finalist</h3>
+          <p class="text-star-light mb-4">Recognized for open-source contributions on an international stage.</p>
+          <a href="https://opensource.googleblog.com/2020/02/announcing-our-google-code-in-2019.html" class="inline-block bg-space-blue hover:bg-accent-blue text-white text-sm font-bold py-2 px-6 rounded-full transition-colors duration-300">
+            View Google's Announcement
+          </a>
+        </div>
+
+        <!-- 2018 -->
+        <div class="relative pl-8 md:pl-12">
+          <span class="absolute -left-[11px] top-1 bg-accent-blue h-6 w-6 rounded-full border-4 border-space-dark"></span>
+          <div class="text-xl font-bold text-white mb-1">2018</div>
+          <h3 class="text-2xl font-semibold mb-2 text-accent-blue">Google Code-in Finalist</h3>
+          <p class="text-star-light mb-4">Recognized for open-source contributions on an international stage.</p>
+          <a href="https://opensource.googleblog.com/2019/01/google-code-in-2018-winners.html" class="inline-block bg-space-blue hover:bg-accent-blue text-white text-sm font-bold py-2 px-6 rounded-full transition-colors duration-300">
+            View Google's Announcement
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
@@ -127,9 +172,6 @@ const projects = await getCollection('projects');
     /* Specific styles for this page if needed */
     .skill-tag {
       @apply bg-space-blue text-star-light px-4 py-2 rounded-full shadow-md transition-all duration-300 transform hover:scale-105 hover:bg-accent-blue;
-    }
-    .achievement-card {
-      @apply p-6 rounded-xl bg-space-dark/50 flex flex-col items-center justify-center transition-all duration-300 transform hover:scale-105 hover:bg-purple-900/50;
     }
     .social-icon {
       @apply flex items-center space-x-2 text-star-light hover:text-accent-blue transition-colors duration-300;
