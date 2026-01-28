@@ -54,7 +54,7 @@ const { title, description } = Astro.props;
 
       /* Smooth scrolling */
       html {
-        scroll-behavior: smooth;
+        scroll-behavior: auto;
       }
 
       /* Scroll animation classes for elements */
@@ -121,7 +121,7 @@ const { title, description } = Astro.props;
               const targetPosition = target.offsetTop - headerHeight;
               window.scrollTo({
                 top: targetPosition,
-                behavior: 'smooth'
+                behavior: 'auto'
               });
             }
           }, 100); // Small delay to ensure page is ready
