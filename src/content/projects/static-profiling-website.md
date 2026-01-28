@@ -4,13 +4,13 @@ description: "A static profiling website hosted on Netlify with an AI chatbot fe
 tags: ["Website"]
 myRole: ["Backend Developer", "AI Developer"]
 technologies: ["HTML", "CSS", "JavaScript", "Cloudflare Workers", "Gemini API", "Netlify"]
-thumbnail: "/static-profiling-website.png" 
+thumbnail: "/projects/static-profiling-website/thumbnail.png" 
 aesthetic: "https://mekarsarijember.netlify.app/assets/img/hero-handshake.jpeg" 
 liveDemo: https://mekarsarijember.netlify.app/
 order: 1
 ---
 
-![Mekarsari Website Preview](/static-profiling-website.png)
+![Mekarsari Website Preview](/projects/static-profiling-website/web.png)
 *A preview of the chatbot interface on the profiling website.*
 
 

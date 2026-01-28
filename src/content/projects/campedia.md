@@ -4,7 +4,7 @@ description: "A mobile application for renting camping equipment, developed with
 tags: ["Mobile App"]
 myRole: ["Backend Developer", "Mobile Developer"]
 technologies: ["Flutter", "Dart", "FastAPI", "Python", "Local MySQL (for backend)", "RESTful APIs"]
-thumbnail: "/projects/campedia/thumbnail.jpg"
+thumbnail: "/projects/campedia/thumbnail.png"
 githubRepo: "https://github.com/kiy4h/campedia"
 order: 3
 ---
@@ -13,7 +13,7 @@ order: 3
 
 
 <figure>
-    <img src="/projects/campedia/thumbnail.jpg" alt="User Dashboard" />
+    <img src="/projects/campedia/splashscreen.jpg" alt="User Dashboard" />
     <figcaption>The Campedia Mobile Application Interface.
 </figure>
 

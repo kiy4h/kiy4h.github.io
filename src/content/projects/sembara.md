@@ -4,13 +4,18 @@ description: "A cultural gamification ecosystem powered by a Serverless RAG Chat
 tags: ["Mobile App"]
 myRole: ["AI Engineer"]
 technologies: ["Cloudflare Workers", "Gemini API", "JavaScript", "Serverless API"]
-thumbnail: "/projects/sembara/thumbnail.jpg"
+thumbnail: "/projects/sembara/thumbnail.png"
 liveDemo: null
 githubRepo: https://github.com/Fidhlah/BudayaGo
 order: 2
 ---
 
 ## About this Project
+
+<figure>
+    <img src="/projects/sembara/app.jpg" alt="Sembara Mobile Application Interface" />
+    <figcaption>The Sembara Mobile Application Interface.
+</figure>
 Indonesia is home to thousands of cultural artifacts, yet learning about them often feels disconnected from the modern digital experience. Furthermore, local cultural practitioners (artisans, performers) struggle to find economic footing in the digital age.
 
 **Sembara** bridges this gap. We created a mobile gamification ecosystem that makes cultural literacy addictive. Users explore a virtual map, complete cultural quests, and interact with a smart AI guide. Crucially, the app connects users directly to local artisans, turning cultural appreciation into economic empowerment.
@@ -19,7 +24,7 @@ This project was selected as a **Top 50 National Finalist** in the **BudayaGo 20
 
 ## System Architecture
 <figure>
-    <img src="/projects/sembara/architecture.png" alt="User Dashboard" />
+    <img src="/projects/sembara/architecture.png" />
     <figcaption>The overall system architecture of Sembara's gamified cultural ecosystem. </figcaption>
 </figure>
 
