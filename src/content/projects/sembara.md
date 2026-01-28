@@ -3,7 +3,7 @@ title: "Sembara"
 description: "A cultural gamification ecosystem powered by a Serverless RAG Chatbot using Cloudflare Workers and Gemini API."
 tags: ["Mobile App"]
 myRole: ["AI Engineer"]
-technologies: ["Cloudflare Workers", "Gemini API", "JavaScript", "Serverless API"]
+technologies: ["Cloudflare Workers", "Flutter", "Supabase","Gemini API", "JavaScript", "Dart"]
 thumbnail: "/projects/sembara/thumbnail.png"
 liveDemo: null
 githubRepo: https://github.com/Fidhlah/BudayaGo

@@ -1,4 +1,3 @@
-// src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
 const projects = defineCollection({
@@ -9,17 +8,16 @@ const projects = defineCollection({
         // tags consist of: Website, Mobile App, Game, AI/ML. there can be multiple tags. First tag decides "other apps..." section on detail page
         tags: z.array(z.string()).optional(), // displayed as badges on homepage card and detail page
         myRole: z.array(z.string()).optional(), // e.g., "Solo Project", "Team Lead", "Backend Developer"
-        technologies: z.array(z.string()),
+        technologies: z.array(z.string()), // skillicons.dev icons will be used based on these names
         thumbnail: z.string().optional(), // URL or path to an image/gif for the homepage card
         aesthetic: z.string().optional(), // URL or path to a more aesthetic image for the detail page header
         order: z.number().optional(), // For custom sorting on homepage
+
         // For the detail page:
         longDescription: z.string().optional(), // More detailed text
         liveDemo: z.string().url().nullable().optional(),
         githubRepo: z.string().url().nullable().optional(),
         collaborators: z.array(z.string()).optional(), // List of collaborators' names. only fill if team-based project
-        // Add fields for image/video attachments if you want to explicitly list them in frontmatter
-        // e.g., attachments: z.array(z.object({ src: z.string().url(), type: z.enum(['image', 'video']) })).optional(),
     }),
 });
 

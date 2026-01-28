@@ -1,0 +1,128 @@
+---
+interface Props {
+  name: string;
+  size?: 'sm' | 'md'; 
+}
+
+const { name, size = 'sm' } = Astro.props;
+
+// Normalize keys to lowercase for easier matching
+const iconMap: Record<string, string> = {
+'android': 'android',
+'angular': 'angular',
+'astro': 'astro',
+'aws': 'aws',
+'bash': 'bash',
+'blender': 'blender',
+'bootstrap': 'bootstrap',
+'c': 'c',
+'c#': 'cs',
+'c++': 'cpp',
+'cloudflare': 'cloudflare',
+'cloudflare workers': 'cloudflare',
+'cpp': 'cpp',
+'csharp': 'cs',
+'css': 'css',
+'css3': 'css',
+'dart': 'dart',
+'docker': 'docker',
+'express.js': 'express',
+'express': 'express',
+'fastapi': 'fastapi',
+'figma': 'figma',
+'firebase': 'firebase',
+'flutter': 'flutter',
+'gcp': 'gcp',
+'git': 'git',
+'github': 'github',
+'go': 'go',
+'golang': 'go',
+'graphql': 'graphql',
+'html': 'html',
+'html5': 'html',
+'illustrator': 'ai',
+'java': 'java',
+'javascript': 'js',
+'jquery': 'jquery',
+'js': 'js',
+'kotlin': 'kotlin',
+'laravel': 'laravel',
+'linux mint': 'linux',
+'linux': 'linux',
+'mongo': 'mongodb',
+'mongodb': 'mongodb',
+'mysql': 'mysql',
+'next.js': 'nextjs',
+'next': 'nextjs',
+'nextjs': 'nextjs',
+'nginx': 'nginx',
+'node.js': 'nodejs',
+'node': 'nodejs',
+'nodejs': 'nodejs',
+'opencv': 'opencv',
+'photoshop': 'ps',
+'php': 'php',
+'postgres': 'postgres',
+'postgresql': 'postgres',
+'py': 'py',
+'python': 'py',
+'rails': 'rails',
+'react native': 'react',
+'react': 'react',
+'reactjs': 'react',
+'redis': 'redis',
+'redux': 'redux',
+'ruby': 'ruby',
+'rust': 'rust',
+'sass': 'sass',
+'scss': 'sass',
+'supabase': 'supabase',
+'spring boot': 'spring',
+'spring': 'spring',
+'springboot': 'spring',
+'swift': 'swift',
+'tailwind css': 'tailwind',
+'tailwind': 'tailwind',
+'tailwindcss': 'tailwind',
+'three.js': 'threejs',
+'threejs': 'threejs',
+'ts': 'ts',
+'typescript': 'ts',
+'ubuntu': 'linux',
+'unity': 'unity',
+'vim': 'vim',
+'vite': 'vite',
+'vscode': 'vscode',
+'vue': 'vue',
+'vuejs': 'vue',
+'webpack': 'webpack',
+};
+
+const key = name.toLowerCase().trim();
+const iconCode = iconMap[key];
+
+// Define styles
+const baseStyle = "inline-flex items-center gap-1.5 rounded font-medium border transition-colors duration-300";
+
+// Size variants
+const sizeStyles = {
+    sm: "text-xs px-2.5 py-1", // for cards
+    md: "text-sm px-3 py-1.5"  // for detail page
+};
+
+// Color variants
+const colorStyle = "bg-space-blue/20 text-accent-blue border-space-blue/30 hover:border-accent-blue/50 hover:bg-space-blue/30 cursor-default";
+
+---
+
+<span class:list={[baseStyle, sizeStyles[size], colorStyle]}>
+  {iconCode && (
+    <img 
+      src={`https://skillicons.dev/icons?i=${iconCode}&theme=dark`} 
+      alt="" 
+      class={size === 'sm' ? "w-3.5 h-3.5" : "w-4 h-4"}
+      loading="lazy"
+    />
+  )}
+  {name}
+</span>

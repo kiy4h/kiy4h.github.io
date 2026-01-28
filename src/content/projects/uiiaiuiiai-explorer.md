@@ -3,7 +3,7 @@ title: "Uiiaiuiiai Explorer"
 description: "A 3D game developed from scratch in raw C++ using OpenGL for graphics rendering, featuring a player navigating a terrain to collect stars."
 tags: ["Game"]
 myRole: ["Game Developer"]
-technologies: ["C++", "OpenGL", "3D Graphics", "Game Development"]
+technologies: ["C++", "OpenGL", "GLSL"]
 thumbnail: "/projects/uiiaiuiiai/thumbnail.png"
 aesthetic: "/projects/uiiaiuiiai/game.png"
 githubRepo: "https://github.com/kiy4h/uiiaiuiiai-explorer"

@@ -1,5 +1,6 @@
 ---
-// src/components/ProjectCard.astro
+import TechBadge from './TechBadge.astro';
+
 interface Props {
   title: string;
   description: string;
@@ -63,9 +64,7 @@ const { title, description, technologies, imageSrc, link, githubRepo, liveDemo }
     {/* Technologies */}
     <div class="flex flex-wrap gap-2 mt-auto relative z-0">
       {technologies.slice(0, 4).map(tech => (
-        <span class="text-xs font-medium px-2.5 py-1 rounded bg-space-blue/20 text-accent-blue border border-space-blue/30">
-          {tech}
-        </span>
+        <TechBadge name={tech} size="sm" />
       ))}
       {technologies.length > 4 && (
         <span class="text-xs font-medium px-2 py-1 text-star-light/60">
