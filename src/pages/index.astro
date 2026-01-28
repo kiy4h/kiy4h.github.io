@@ -50,7 +50,7 @@ const projects = await getCollection('projects');
       </h1>
       <div class="animate-fade-in-up">  
       <p class="text-lg md:text-xl text-star-light opacity-80 max-w-2xl mx-auto mb-8">
-        A backend developer crafting elegant systems. Writing code with clarity, curiosity, and care.
+        A full-stack developer crafting elegant systems. Writing code with clarity, curiosity, and care.
       </p>
       <a href="#projects" class="inline-block bg-accent-blue hover:bg-accent-purple text-space-dark font-bold py-3 px-8 rounded-full shadow-lg transform hover:-translate-y-1 transition-all duration-300">
         Explore My Projects
@@ -71,6 +71,8 @@ const projects = await getCollection('projects');
             technologies={project.data.technologies}
             imageSrc={project.data.thumbnail || '/placeholder-image.jpg'}
             link={`/projects/${project.slug}`}
+            githubRepo={project.data.githubRepo}
+            liveDemo={project.data.liveDemo}
           />
         )
       )}
